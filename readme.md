@@ -1,6 +1,6 @@
 # Optical
 
-Projeto com a finalidade de calculo de atenuação de potência da fibra óptica nos passivos de rede.
+Projeto com a finalidade de cálculo de atenuação de potência da fibra óptica nos passivos de rede.
 
 # Uso:
 
