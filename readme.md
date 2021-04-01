@@ -6,7 +6,7 @@ Projeto com a finalidade de cálculo de atenuação de potência da fibra óptic
 
 **Imports necessários**
 
-     using Optical;
+    using Optical;
 
     using Optical.Math;
 
