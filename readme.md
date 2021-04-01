@@ -4,9 +4,11 @@ Projeto com a finalidade de cálculo de atenuação de potência da fibra óptic
 
 # Uso:
 
- using Optical;
+**Imports necessários**
 
- using Optical.Math;
+     using Optical;
+
+    using Optical.Math;
 
 **Objeto responsável pelo calculo do sistema:**
 
