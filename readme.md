@@ -14,7 +14,7 @@ OLT oLT = new OLT(1, managercalculate, 1); **Representa a OLT, de onde parte o s
  
 ISplitter splitter = new BalancedSplitter(BalancedType._1_TO_2, managercalculate); **Splitter onde este represeta o atenuador do sistema.**
  
-splitter.OutPutFiber[0].Size = 1; **Tamanho de fibra em km.**
+splitter.OutPutFiber[0].Size = 1; **Tamanho da fibra em km.**
  
 splitter.AddInputFiber(oLT.OutPutFiber[0]); **Adiciona a fibra ao passivo de rede.**
  
