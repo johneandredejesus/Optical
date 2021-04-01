@@ -8,22 +8,22 @@ using Optical;
 
 using Optical.Math;
 
-ICalculationManager managercalculate = new CalculationManager(); **Objeto responsável pelo calculo do sistema**
+ICalculationManager calculationManager  = new CalculationManager(); **Objeto responsável pelo calculo do sistema**
  
 OLT oLT = new OLT(1, managercalculate, 1); **Representa a OLT, de onde parte o sinal do sistema.**
  
-ISplitter splitter = new BalancedSplitter(BalancedType._1_TO_2, managercalculate); **Splitter onde este represeta o atenuador do sistema.**
+ISplitter splitter = new BalancedSplitter(BalancedType._1_TO_2, calculationManager); **Splitter onde este represeta o atenuador do sistema.**
  
 splitter.OutPutFiber[0].Size = 1; **Tamanho da fibra em km.**
  
 splitter.AddInputFiber(oLT.OutPutFiber[0]); **Adiciona a fibra ao passivo de rede.**
  
-ISplice splice = new Splice(SpliceType.FUSION, managercalculate); **Splice representa a emenda, caso haja a necessidade.**
+ISplice splice = new Splice(SpliceType.FUSION, calculationManager); **Splice representa a emenda, caso haja a necessidade.**
  
 splice.AddInPutFiber(splitter.OutPutFiber[0]); **Adiciona a fibra ao passivo de rede.**
 
-ISplitter splitter2 = new UnBalancedSplitter(UnBalanced._10X90, managercalculate);  **Splitter onde este represeta o atenuador do sistema.**
+ISplitter splitter2 = new UnBalancedSplitter(UnBalanced._10X90, calculationManager);  **Splitter onde este represeta o atenuador do sistema.**
 
 splitter2.AddInputFiber(splice.OutPutFiber); **Adiciona a fibra ao passivo de rede.**
 
-Console.WriteLine(managercalculate.TotalSystemLoss()); **Exibe a perda total do sistema.**
+Console.WriteLine(calculationManager.TotalSystemLoss()); **Exibe a perda total do sistema.**
