@@ -5,6 +5,7 @@ Projeto com a finalidade de cálculo de atenuação de potência da fibra óptic
 # Uso:
 
 using Optical;
+
 using Optical.Math;
 
 ICalculationManager managercalculate = new CalculationManager(); **Objeto responsável pelo calculo do sistema**
