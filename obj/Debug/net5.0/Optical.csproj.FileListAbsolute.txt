@@ -1,0 +1,12 @@
+C:\Users\johne\source\repos\Optical\bin\Debug\net5.0\Optical.deps.json
+C:\Users\johne\source\repos\Optical\bin\Debug\net5.0\Optical.dll
+C:\Users\johne\source\repos\Optical\bin\Debug\net5.0\ref\Optical.dll
+C:\Users\johne\source\repos\Optical\bin\Debug\net5.0\Optical.pdb
+C:\Users\johne\source\repos\Optical\obj\Debug\net5.0\Optical.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\johne\source\repos\Optical\obj\Debug\net5.0\Optical.AssemblyInfoInputs.cache
+C:\Users\johne\source\repos\Optical\obj\Debug\net5.0\Optical.AssemblyInfo.cs
+C:\Users\johne\source\repos\Optical\obj\Debug\net5.0\Optical.csproj.CoreCompileInputs.cache
+C:\Users\johne\source\repos\Optical\obj\Debug\net5.0\Optical.dll
+C:\Users\johne\source\repos\Optical\obj\Debug\net5.0\ref\Optical.dll
+C:\Users\johne\source\repos\Optical\obj\Debug\net5.0\Optical.pdb
+C:\Users\johne\source\repos\Optical\obj\Debug\net5.0\Optical.csprojAssemblyReference.cache

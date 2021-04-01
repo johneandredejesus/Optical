@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Optical", "Optical.csproj", "{EE589E6A-E33B-4556-928B-D6D178F727DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Test\Test.csproj", "{579DE86D-9EFB-47E8-99A9-BCD9C304C601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE589E6A-E33B-4556-928B-D6D178F727DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE589E6A-E33B-4556-928B-D6D178F727DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE589E6A-E33B-4556-928B-D6D178F727DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE589E6A-E33B-4556-928B-D6D178F727DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579DE86D-9EFB-47E8-99A9-BCD9C304C601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579DE86D-9EFB-47E8-99A9-BCD9C304C601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579DE86D-9EFB-47E8-99A9-BCD9C304C601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579DE86D-9EFB-47E8-99A9-BCD9C304C601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1601475C-EB9E-4F0F-AE15-1097F929B929}
+	EndGlobalSection
+EndGlobal
