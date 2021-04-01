@@ -2,9 +2,9 @@
 
 Projeto com a finalidade de cálculo de atenuação de potência da fibra óptica nos passivos de rede.
 
-# Uso:
+## Uso
 
-**Imports necessários**
+**Imports necessários:**
 
     using Optical;
 
