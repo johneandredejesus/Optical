@@ -53,13 +53,7 @@ namespace Optical
 
             this.numberPorts = numberPorts;
         }
-        public void AddCalculationManager(ICalculationManager calculationManager)
-        {
-            this.calculationManager = calculationManager;
-            this.outPutFiber = this.OutPuts();
-            this.calculationManager.Add(this);
-        }
-
+       
         public void ChangePower(double? power)
         {
             if (power <= 0)

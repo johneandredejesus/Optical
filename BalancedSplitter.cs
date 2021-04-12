@@ -24,9 +24,9 @@ namespace Optical
        
         public BalancedType Balanced => this.balanced;
 
-        public IFiber InPutFiber { get { VerifyCalculationManager(); return this.inPutFiber; } } 
+        public IFiber InPutFiber { get { return this.inPutFiber; } } 
 
-        public List<IFiber> OutPutFiber { get { VerifyCalculationManager(); return this.outPutFiber; } }
+        public List<IFiber> OutPutFiber { get { return this.outPutFiber; } }
 
         public BalancedAttenuation Attenuation => this.attenuation;
 
@@ -34,11 +34,11 @@ namespace Optical
 
         public string Name { get; set; }
 
-        public IFiber CurrentInPutFiber { get { VerifyCalculationManager(); return this.inPutFiber; } }
+        public IFiber CurrentInPutFiber { get {  return this.inPutFiber; } }
 
-        public bool LockedInput { get { VerifyCalculationManager(); return this.inPutFiber is not null; } }
+        public bool LockedInput { get {  return this.inPutFiber is not null; } }
 
-        public bool LockedOutput { get { VerifyCalculationManager(); return this.outPutFiber.Count(fiber => fiber.Locked == true) == this.outPutFiber.Count; } }
+        public bool LockedOutput { get { return this.outPutFiber.Count(fiber => fiber.Locked == true) == this.outPutFiber.Count; } }
 
         public BalancedSplitter(BalancedType balanced, ICalculationManager calculationManager)
         {
@@ -56,34 +56,9 @@ namespace Optical
 
             this.calculationManager.Add(this);
         }
-        public BalancedSplitter(BalancedType balanced)
-        {
-            this.balanced = balanced;
-
-            this.inPutFiber = null;
-
-            this.attenuation = new BalancedAttenuation(null);
-
-            this.totalLoss = 0;
-
-        }
-        public void AddCalculationManager(ICalculationManager calculationManager)
-        {
-
-            if(this.outPutFiber is null  && this.calculationManager is null)
-            {
-                this.calculationManager = calculationManager;
-
-                this.outPutFiber = this.OutPuts();
-
-                this.calculationManager.Add(this);
-            }
-          
-        }
+       
         public void AddInputFiber(IFiber fiber)
         {
-            VerifyCalculationManager();
-
             this.inPutFiber = fiber;
 
             this.inPutFiber.Lock();
@@ -92,8 +67,6 @@ namespace Optical
         }
         public void RemoveInPutFiber()
         {
-            VerifyCalculationManager();
-
             this.inPutFiber.UnLock();
 
             this.inPutFiber = null;
@@ -106,8 +79,6 @@ namespace Optical
         }
         public void Calculate() 
         {
-            VerifyCalculationManager();
-
             if(this.inPutFiber is not null)
                 this.attenuation = GetAttenuation(this.inPutFiber.OutPutPower);
            
@@ -185,12 +156,7 @@ namespace Optical
            
             return fibers;
         }
-        private void VerifyCalculationManager()
-        {
-            if (this.calculationManager is null)
-                throw new ArgumentNullException("CalculationManager deve ser atribuído.");
 
-        }
         public void Dispose()
         {
             this.inPutFiber = null;

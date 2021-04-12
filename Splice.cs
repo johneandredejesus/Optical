@@ -23,7 +23,7 @@ namespace Optical
 
         private ICalculationManager calculationManager;
 
-        public SpliceAttenuation Attenuation { get { VerifyCalculationManager(); return this.attenuation; } }
+        public SpliceAttenuation Attenuation { get { return this.attenuation; } }
 
         private double? totalLoss;
 
@@ -31,11 +31,11 @@ namespace Optical
 
         public string Name { get; set; }
 
-        public IFiber CurrentInPutFiber { get { VerifyCalculationManager(); return this.inPutFiber; } }
+        public IFiber CurrentInPutFiber { get { return this.inPutFiber; } }
 
-        public bool LockedInput { get { VerifyCalculationManager(); return this.inPutFiber is not null; } }
+        public bool LockedInput { get { return this.inPutFiber is not null; } }
 
-        public bool LockedOutput { get { VerifyCalculationManager(); return this.outPutFiber.Locked; } }
+        public bool LockedOutput { get { return this.outPutFiber.Locked; } }
 
         public Splice(SpliceType spliceType, ICalculationManager calculationManager)
         {
@@ -49,26 +49,8 @@ namespace Optical
 
         }
 
-        public Splice(SpliceType spliceType)
-        {
-            this.spliceType = spliceType;
-        }
-
-        public void AddCalculationManager(ICalculationManager calculationManager)
-        {
-            if (this.outPutFiber is null && this.calculationManager is null)
-            {
-                this.calculationManager = calculationManager;
-
-                this.outPutFiber = this.OutPuts();
-
-                this.calculationManager.Add(this);
-            }
-        }
-
         public void AddInPutFiber(IFiber fiber)
         {
-            VerifyCalculationManager();
 
             this.inPutFiber = fiber;
 
@@ -79,8 +61,6 @@ namespace Optical
 
         public void RemoveInPutFiber()
         {
-            VerifyCalculationManager();
-
             this.inPutFiber.UnLock();
 
             this.inPutFiber = null;
@@ -90,8 +70,6 @@ namespace Optical
 
         public void Calculate()
         {
-            VerifyCalculationManager();
-            
             if (this.inPutFiber == null)
                 this.outPutFiber.InPutPower = null;
             else
@@ -131,19 +109,13 @@ namespace Optical
         }
         public void Change(SpliceType spliceType)
         {
-            VerifyCalculationManager();
 
             this.spliceType = spliceType;
 
             this.calculationManager.Calculate();
         }
 
-        private void VerifyCalculationManager()
-        {
-            if(this.calculationManager is null)
-                throw new ArgumentNullException("CalculationManager deve ser atribuído.");
-           
-        }
+   
         public void Dispose()
         {
             this.inPutFiber = null;

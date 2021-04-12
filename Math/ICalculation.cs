@@ -10,8 +10,6 @@ namespace Optical.Math
     {
         public void Calculate();
         public double? TotalLoss { get; }
-
-        public void AddCalculationManager(ICalculationManager calculationManager);
     }
 
 }
