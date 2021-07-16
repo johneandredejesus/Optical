@@ -14,7 +14,7 @@ Projeto com a finalidade de cálculo de atenuação de potência da fibra óptic
 
     ICalculationManager calculationManager  = new CalculationManager();
  
-**Representa a OLT, de onde parte o sinal do sistema:**
+**Representa a OLT de onde parte o sinal do sistema:**
 
     OLT oLT = new OLT(1, managercalculate, 1);
  
